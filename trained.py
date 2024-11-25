@@ -23,10 +23,10 @@ data_t = transforms.Compose([
 
 
 def predict_img(img):
-    img_ten = data_t(img).unsqueeze(0).to(device)  # Converter a imagem para tensor
+    img_ten = data_t(img).unsqueeze(0).to(device) 
     with torch.no_grad():
-        output = model(img_ten)  # Obter a saída do modelo
-    _, pred = torch.max(output, 1)  # Obter a classe com maior probabilidade
+        output = model(img_ten) 
+    _, pred = torch.max(output, 1)
     return pred.item()
 
 
